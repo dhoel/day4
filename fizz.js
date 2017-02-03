@@ -30,19 +30,11 @@ function fizzBuzz (countTo) {
 // console.log(fizzBuzz(100));
 
 
-// $('#number-chooser').submit(function() {
-//   var choice = $('#number-chooser :input');
-//   console.log(choice);
-// })
-
 $('#number-chooser').submit(function(event) {
-  event.preventDefault(); 
+  event.preventDefault();
   var choice = parseInt($('#number-choice').val());
   var result = fizzBuzz(choice);
-  console.log(result);
-   var turbo = result.map(function(num) {
+   $('.js-results').append(result.map(function(num) {
      return "<div class='fizz-buzz-item'> <span>" + num + "</span> </div>";
-   })
-    console.log(turbo);
+   }));
   });
-
